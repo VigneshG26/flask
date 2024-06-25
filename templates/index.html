@@ -6,10 +6,13 @@
     <title>Index</title>
 </head>
 <body>
+    {% include 'nav.html'%}
     <h1>This is Index Page</h1>
     <ul>
         <li><a href="{{url_for('about')}}">About</a></li>
         <li><a href="{{url_for('contact')}}">Contact</a></li>
     </ul>
+
+    {% include 'footer.html'%}
 </body>
 </html>

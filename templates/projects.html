@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <section id="projects">
+        <div class="proj-head">
+            <h1 class="h1-style">Projects</h1>
+            <p class="p-style">Here are some of my projects.</p>
+        </div>
+
+        <div class="projects-main-container">
+
+            {% for project in projects %}
+                <div class="card">
+                    <img src="{{project['img_src']}}" alt="krish">
+                    <div class="proj-lang">
+                        {% for lang in project['lang_used'] %}
+                        <span>{{lang}}</span>
+                        {% endfor %}
+                    </div>
+                    <p class="proj-desc">{{project['proj_desc1']}} <span class="imp-desc">{{project['proj_desc2']}}</span></p>
+                    <div class="proj-links">
+                        <a href="{{project['code_link']}}" target="_blank">View code</a>
+                        <a href="{{project['live_link']}}" target="_blank">View live</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>

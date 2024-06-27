@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav.html'%}
+    <h1> <center> This is Careers Page</center></h1>
+    {% for job in jobs%}
+    <div>
+        <h2>Job Title: {{job['title']}}</h2>
+        <h3>Location: {{job['location']}}</h3>
+        <h3>Salary: {{job['salary']}}</h3>
+    </div>
+    <br>
+    {% endfor %}
+
+    {% include 'footer.html'%}
+</body>
+</html>

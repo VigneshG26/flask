@@ -1,5 +1,5 @@
 html{
-    font-size: 62.5%;
+    font-size: 72.5%;
 }
 
 *{
@@ -314,7 +314,7 @@ html{
     grid-column-gap: 4%;
 }
 
-.projects-main-container .card{
+.card{
     margin-bottom: 5rem;
     background-color: #241e1d;
     border: 2px solid #e0ae3a;
@@ -327,7 +327,7 @@ html{
     justify-content: space-between;
 }
 
-.projects-main-container .card:hover{
+.card:hover{
     transform: translateY(-1.5rem);
     box-shadow: 0 0 10px #e0ae3a, 0 0 10px #e0ae3a;
 }

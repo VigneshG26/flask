@@ -16,21 +16,24 @@
         <div class="projects-main-container">
 
             {% for project in projects %}
-                <div class="card">
-                    <img src="{{project['img_src']}}" alt="krish">
-                    <div class="proj-lang">
-                        {% for lang in project['lang_used'] %}
-                        <span>{{lang}}</span>
-                        {% endfor %}
+            <a href="{{ url_for('details', id=project['id']) }}" style="text-decoration: none;">
+                    <div class="card">
+                        <img src="{{project['img_src']}}" alt="{{project['alt']}}">
+                        <div class="proj-lang">
+                            {% for lang in project['lang_used'] %}
+                            <span>{{lang}}</span>
+                            {% endfor %}
+                        </div>
+                        <p class="proj-desc">{{project['proj_desc1']}} <span class="imp-desc">{{project['proj_desc2']}}</span></p>
+                        <div class="proj-links">
+                            <a href="{{project['code_link']}}" target="_blank">View code</a>
+                            <a href="{{project['live_link']}}" target="_blank">View live</a>
+                        </div>
                     </div>
-                    <p class="proj-desc">{{project['proj_desc1']}} <span class="imp-desc">{{project['proj_desc2']}}</span></p>
-                    <div class="proj-links">
-                        <a href="{{project['code_link']}}" target="_blank">View code</a>
-                        <a href="{{project['live_link']}}" target="_blank">View live</a>
-                    </div>
-                </div>
+                </a>
             {% endfor %}
         </div>
+        
     </section>
 </body>
 </html>

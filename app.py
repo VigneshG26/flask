@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, abort, render_template
 
 app = Flask(__name__)
 
@@ -27,6 +27,7 @@ Projects = [
     {
         'id': 1,
         'img_src':'../static/images/KrishFashionn.jpg',
+        'alt': 'krish',
         'lang_used': ['HTML','CSS','JS'],
         'proj_desc1': 'krish Fashion, your premier shopping haven is here.',
         'proj_desc2': 'Shop Now!',
@@ -36,6 +37,7 @@ Projects = [
     {
         'id': 2,
         'img_src':'../static/images/Glow Organic.jpg',
+        'alt': 'Glow Organic',
         'lang_used': ['HTML','CSS','JS'],
         'proj_desc1': 'Enhance your health! Purchase our organic products.',
         'proj_desc2': 'Shop Now!',
@@ -45,6 +47,7 @@ Projects = [
     {
         'id': 3,
         'img_src':'../static/images/fetch-products.jpg',
+        'alt': 'Fetch Products',
         'lang_used': ['HTML','CSS','JS','API'],
         'proj_desc1': 'Fetched products data from external source using ',
         'proj_desc2': 'Fetch API.',
@@ -54,6 +57,7 @@ Projects = [
     {
         'id': 4,
         'img_src':'../static/images/blackpink.jpg',
+        'alt': 'Blackpink',
         'lang_used': ['HTML','CSS','JS'],
         'proj_desc1': 'Blackpink\'s world, Welcome to a fan\'s paradise. ',
         'proj_desc2': 'Explore Now!.',
@@ -63,6 +67,7 @@ Projects = [
     {
         'id': 5,
         'img_src':'../static/images/Jazzle.jpg',
+        'alt': 'Jazzle',
         'lang_used': ['HTML','CSS','JS'],
         'proj_desc1': 'Jazzle your one stop shopping is here.',
         'proj_desc2': 'Shop Now!.',
@@ -90,6 +95,12 @@ def careers():
 @app.route('/Projects')
 def projects():
     return render_template('projects.html', projects = Projects)
+
+@app.route('/Details/<int:id>')
+def details(id):  
+    data = Projects[id - 1]
+    return render_template('details.html', data = data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

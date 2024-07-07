@@ -1,5 +1,7 @@
 from flask import Flask, abort, render_template
 
+from database import result_dicts
+
 app = Flask(__name__)
 
 JOBS = [
@@ -23,58 +25,60 @@ JOBS = [
     }
 ]
 
-Projects = [
-    {
-        'id': 1,
-        'img_src':'../static/images/KrishFashionn.jpg',
-        'alt': 'krish',
-        'lang_used': ['HTML','CSS','JS'],
-        'proj_desc1': 'krish Fashion, your premier shopping haven is here.',
-        'proj_desc2': 'Shop Now!',
-        'code_link': 'https://github.com/VigneshG26/KrishFashion',
-        'live_link': 'https://vigneshg26.github.io/KrishFashion/'
-    },
-    {
-        'id': 2,
-        'img_src':'../static/images/Glow Organic.jpg',
-        'alt': 'Glow Organic',
-        'lang_used': ['HTML','CSS','JS'],
-        'proj_desc1': 'Enhance your health! Purchase our organic products.',
-        'proj_desc2': 'Shop Now!',
-        'code_link': 'https://github.com/VigneshG26/Glow-Organic',
-        'live_link': 'https://vigneshg26.github.io/Glow-Organic/'
-    },
-    {
-        'id': 3,
-        'img_src':'../static/images/fetch-products.jpg',
-        'alt': 'Fetch Products',
-        'lang_used': ['HTML','CSS','JS','API'],
-        'proj_desc1': 'Fetched products data from external source using ',
-        'proj_desc2': 'Fetch API.',
-        'code_link': 'https://github.com/VigneshG26/Fetching-Data-from-External-Server',
-        'live_link': 'https://vigneshg26.github.io/Fetching-Data-from-External-Server/'
-    },
-    {
-        'id': 4,
-        'img_src':'../static/images/blackpink.jpg',
-        'alt': 'Blackpink',
-        'lang_used': ['HTML','CSS','JS'],
-        'proj_desc1': 'Blackpink\'s world, Welcome to a fan\'s paradise. ',
-        'proj_desc2': 'Explore Now!.',
-        'code_link': 'https://github.com/VigneshG26/Blackpink-Webpage',
-        'live_link': 'https://vigneshg26.github.io/Blackpink-Webpage/'
-    },
-    {
-        'id': 5,
-        'img_src':'../static/images/Jazzle.jpg',
-        'alt': 'Jazzle',
-        'lang_used': ['HTML','CSS','JS'],
-        'proj_desc1': 'Jazzle your one stop shopping is here.',
-        'proj_desc2': 'Shop Now!.',
-        'code_link': 'https://github.com/VigneshG26/E-Commerce-Website',
-        'live_link': 'https://vigneshg26.github.io/E-Commerce-Website/'
-    }
-]
+Projects = result_dicts
+
+# Projects = [
+#     {
+#         'id': 1,
+#         'img_src':'../static/images/KrishFashionn.jpg',
+#         'alt': 'krish',
+#         'lang_used': ['HTML','CSS','JS'],
+#         'proj_desc1': 'krish Fashion, your premier shopping haven is here.',
+#         'proj_desc2': 'Shop Now!',
+#         'code_link': 'https://github.com/VigneshG26/KrishFashion',
+#         'live_link': 'https://vigneshg26.github.io/KrishFashion/'
+#     },
+#     {
+#         'id': 2,
+#         'img_src':'../static/images/Glow Organic.jpg',
+#         'alt': 'Glow Organic',
+#         'lang_used': ['HTML','CSS','JS'],
+#         'proj_desc1': 'Enhance your health! Purchase our organic products.',
+#         'proj_desc2': 'Shop Now!',
+#         'code_link': 'https://github.com/VigneshG26/Glow-Organic',
+#         'live_link': 'https://vigneshg26.github.io/Glow-Organic/'
+#     },
+#     {
+#         'id': 3,
+#         'img_src':'../static/images/fetch-products.jpg',
+#         'alt': 'Fetch Products',
+#         'lang_used': ['HTML','CSS','JS','API'],
+#         'proj_desc1': 'Fetched products data from external source using ',
+#         'proj_desc2': 'Fetch API.',
+#         'code_link': 'https://github.com/VigneshG26/Fetching-Data-from-External-Server',
+#         'live_link': 'https://vigneshg26.github.io/Fetching-Data-from-External-Server/'
+#     },
+#     {
+#         'id': 4,
+#         'img_src':'../static/images/blackpink.jpg',
+#         'alt': 'Blackpink',
+#         'lang_used': ['HTML','CSS','JS'],
+#         'proj_desc1': 'Blackpink\'s world, Welcome to a fan\'s paradise. ',
+#         'proj_desc2': 'Explore Now!.',
+#         'code_link': 'https://github.com/VigneshG26/Blackpink-Webpage',
+#         'live_link': 'https://vigneshg26.github.io/Blackpink-Webpage/'
+#     },
+#     {
+#         'id': 5,
+#         'img_src':'../static/images/Jazzle.jpg',
+#         'alt': 'Jazzle',
+#         'lang_used': ['HTML','CSS','JS'],
+#         'proj_desc1': 'Jazzle your one stop shopping is here.',
+#         'proj_desc2': 'Shop Now!.',
+#         'code_link': 'https://github.com/VigneshG26/E-Commerce-Website',
+#         'live_link': 'https://vigneshg26.github.io/E-Commerce-Website/'
+#     }
+# ]
 
 @app.route('/')
 def index():

@@ -102,8 +102,11 @@ def projects():
 
 @app.route('/Details/<int:id>')
 def details(id):  
-    data = Projects[id - 1]
-    return render_template('details.html', data = data)
+    try:
+        data = Projects[id - 1]
+        return render_template('details.html', data = data)
+    except Exception as e:
+        return "Page Not Found 404"
 
 
 if __name__ == '__main__':

@@ -18,5 +18,3 @@ for row in result.mappings():
     project = dict(row)
     project['lang_used'] = json.loads(project['lang_used'])
     result_dicts.append(project)
-
-print(result_dicts)
